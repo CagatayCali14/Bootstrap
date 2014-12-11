@@ -15,7 +15,7 @@ if($_GET["Islem"]=="Giris") {
         }
 
 
-        $sql = $kullaniciadi . "select * from anketyonetici WHERE (kullaniciadi='" . "' and sifre='" . $sifre . "')";
+        $sql ="select * from anketyonetici WHERE (kullaniciadi='".$kullaniciadi."' and sifre='".$sifre."' )";
         if (mysql_query($sql, $conn)) {
             setcookie("anket", "PHP");
             echo '<meta http-equiv="refresh" content="4" url="anketyonetici.php">Giriş Başarılı,4 Saniye içerisinde yönetim sayfasına yönlendiriliyorsunuz...
