@@ -11,17 +11,17 @@ function anketlerilistele(){ //fonksiyon başlangıcı
         }
 
 
-            $sql="select * from anketsorular ORDER  BY anketid";
+            $sql="select * from anketsorular ORDER  BY anketid DESC ";
             if($sqlsonuc=mysql_query($sql,$conn)){
                 $anketsayisi=mysql_num_rows($sqlsonuc);
                     if($anketsayisi<1){
-                        echo "Anket Bulunamadı";
+                        echo '';
                     }
                     else{
                         echo'<b>Anketler :</b>';
                         $i=0;
                         while ($anketbilgisi=mysql_fetch_array($sqlsonuc)){
-                            echo'<a href="anketyonetici.php?Mode=Goster&id=.$anketbilgisi["anketid"].$anketbilgisi["anketsoru"]></a><br>';
+                            echo '<a href="anketyonetici.php?Mode=Goster&id=".$anketbilgisi["anketid"].">".$anketbilgisi["anketsoru"]."</a><br>';
                             $i++;
                         }
                         echo'<br>Toplam "'.$i.'" anket bulundu ..';
